@@ -18,7 +18,7 @@ class TennisGame:
     def get_score(self):
         if self.player1_score == self.player2_score:
             if self.player1_score in (0, 1, 2):
-                return f"{self.score_words[self.player1_score]}-All"
+                return f"{self._score_name(self.player1_score)}-All"
             else:
                 return "Deuce"
 
@@ -33,6 +33,6 @@ class TennisGame:
             else:
                 return f"Win for {self.player2_name}"
 
-        player1_score_word = self.score_words.get(self.player1_score)
-        player2_score_word = self.score_words.get(self.player2_score)
+        player1_score_word = self._score_name(self.player1_score)
+        player2_score_word = self._score_name(self.player2_score)
         return f"{player1_score_word}-{player2_score_word}"
